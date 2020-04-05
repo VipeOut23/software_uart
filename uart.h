@@ -85,11 +85,13 @@ uart_error_t uart_try_queue(const char c);
 
 /**
  * Transmit a series of characters (blocking until queued)
+ * @param s can is safe to overwrite after this function returns
  */
 void uart_puts(const char *s, size_t len);
 
 /**
  * Try to transmit a string, if UART is Busy, return UART_BUSY
+ * @param s can is safe to overwrite after this function returns
  */
 uart_error_t uart_try_puts(const char *s, size_t len);
 
