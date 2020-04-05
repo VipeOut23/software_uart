@@ -3,11 +3,31 @@
 
 #include <stddef.h>
 
+/**
+ * The PORT register for UART
+ */
 #define UART_PORT PORTB
+/**
+ * The DDR register for UART
+ */
 #define UART_DDR DDRB
+/**
+ * The bit position for the UART tx pin
+ */
 #define UART_TX_BIT PB1
+/**
+ * The UART baudrate (a sane value for 1MHz would be 4800 baud)
+ */
 #define UART_BAUDRATE 9600
+/**
+ * Uncomment if parity bit shall be sent.
+ * 1 = odd parity
+ * 0 = even parity
+ */
 // #define UART_PARITY 0
+/**
+ * Buffer size for outgoing bytes (number of queue slots)
+ */
 #define UART_BUFFER_SIZE 64
 
 // DON'T CHANGE ANYTHING BELOW /////////////////////////////////////////////////
@@ -54,7 +74,7 @@ typedef enum
 } uart_error_t;
 
 /**
- * Transmit a single character (blocking)
+ * Transmit a single character (blocking until queued)
  */
 void uart_putc(const char c);
 
@@ -64,7 +84,7 @@ void uart_putc(const char c);
 uart_error_t uart_try_queue(const char c);
 
 /**
- * Transmit a series of characters (blocking)
+ * Transmit a series of characters (blocking until queued)
  */
 void uart_puts(const char *s, size_t len);
 
