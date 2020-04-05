@@ -66,7 +66,6 @@ ISR(TIM1_COMPA_vect)
                 uart_set_txframe(txqueue[txqueue_r++]);
                 txqueue_r %= UART_BUFFER_SIZE;
                 txqueue_len--;
-
         }
 }
 
@@ -94,7 +93,7 @@ static void uart_queue(const char c)
  * Try to queue a character for uart transmission (does not start Timer1 ISR)
  * @return UART_BUSY when busy
  */
-uart_error_t uart_try_queue(const char c)
+static uart_error_t uart_try_queue(const char c)
 {
         uint8_t sreg;
 
