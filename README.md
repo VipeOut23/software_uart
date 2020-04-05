@@ -34,7 +34,7 @@ void uart_init();
 ## Example
 
 ``` c
-#inlcude "software_uart/uart.h"
+#include "software_uart/uart.h"
 
 int main()
 {
