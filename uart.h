@@ -6,19 +6,27 @@
 /**
  * The PORT register for UART
  */
+#ifndef UART_PORT
 #define UART_PORT PORTB
+#endif
 /**
  * The DDR register for UART
  */
+#ifndef UART_DDR
 #define UART_DDR DDRB
+#endif
 /**
  * The bit position for the UART tx pin
  */
+#ifndef UART_TX_BIT
 #define UART_TX_BIT PB1
+#endif
 /**
  * The UART baudrate (a sane value for 1MHz would be 4800 baud)
  */
-#define UART_BAUDRATE 9600
+#ifndef UART_BAUDRATE
+#define UART_BAUDRATE 19200
+#endif
 /**
  * Uncomment if parity bit shall be sent.
  * 1 = odd parity
@@ -28,7 +36,9 @@
 /**
  * Buffer size for outgoing bytes (number of queue slots)
  */
+#ifndef UART_BUFFER_SIZE
 #define UART_BUFFER_SIZE 64
+#endif
 
 // DON'T CHANGE ANYTHING BELOW /////////////////////////////////////////////////
 #if F_CPU/UART_BAUDRATE < 256
