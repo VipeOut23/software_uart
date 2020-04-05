@@ -49,15 +49,14 @@ retry:
         /* Queue a message if possible */
         ret = uart_try_puts("Hello, Universe?", 16);
         if(ret == UART_BUSY) {
-                /* Do other stuff.
-                 * Interrupts shall not be disabled at the time
-                 * to ensure a valid transmission */
+                /* Do other stuff. */
                 goto retry;
         }
 
         return 0;
 }
 ```
+_NOTE: Interrupts shall not be disabled for long to ensure a stable transmission_
 
 ## Header configuration
 
