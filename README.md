@@ -1,4 +1,4 @@
-# Software UART
+# Software UART (not invented here)
 
 This is an asynchronus software UART library designed for ATTiny MCUs.  
 Currently it's TX only.
