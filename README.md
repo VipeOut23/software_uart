@@ -13,7 +13,7 @@ void uart_putc(const char c);
 
 Try to transmit a single character, if UART is Busy, return UART_BUSY
 ```c
-uart_error_t uart_try_queue(const char c);
+uart_error_t uart_try_putc(const char c);
 ```
 
 Transmit a series of characters (blocking until queued)
