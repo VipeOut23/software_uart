@@ -190,5 +190,5 @@ void uart_init()
         txqueue_len = 0;
 
         SET(TIFR, OCF1A);
-        sreg = SREG;
+        SREG = sreg;
 }
