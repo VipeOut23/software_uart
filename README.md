@@ -60,6 +60,8 @@ _NOTE: Interrupts shall not be disabled for long to ensure a stable transmission
 
 ## Header configuration
 
+**All these definitions can be overwritten by defining them in the first place**
+
 The PORT register for UART
 ```c
 #define UART_PORT PORTB
