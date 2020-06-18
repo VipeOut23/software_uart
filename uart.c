@@ -38,9 +38,9 @@ static inline void uart_set_txframe(const uint8_t c)
 
         /* MARK . STOP | (PARITY) | DATA | START */
 #ifdef UART_PARITY
-        txframe = (0b11<<10) | (parity<<9) | ((uint16_t) c<<1) | 0;
+        txframe = (0x03<10) | (parity<<9) | ((uint16_t) c<<1) | 0;
 #else
-        txframe = (0b11<<9) | ((uint16_t) c<<1) | 0;
+        txframe = (0x03<<9) | ((uint16_t) c<<1) | 0;
 #endif
 }
 
