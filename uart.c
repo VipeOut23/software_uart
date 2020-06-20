@@ -47,7 +47,7 @@ static inline void uart_set_txframe(const uint8_t c)
 /**
  * Timer1A interrupt at BAUDRATE
  */
-ISR(TIM1_COMPA_vect, ISR_NOBLOCK)
+ISR(TIM1_COMPA_vect)
 {
         if(txframe) {
                 /* Write current bit */
